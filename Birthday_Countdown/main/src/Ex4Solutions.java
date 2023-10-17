@@ -33,6 +33,9 @@ public static void main(String[] args){
     }
      // returns the number of days between current day and next birthday
 
+
+    // ChronoUnit.DAYS.between : is a method works same as Period.between , however it does return
+    // the total number of days between 'currentDate' and 'nextBirthDay'
     return ChronoUnit.DAYS.between(currentDate, nextBirthDay);
 
   }

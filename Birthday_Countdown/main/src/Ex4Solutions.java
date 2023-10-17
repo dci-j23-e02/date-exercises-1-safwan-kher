@@ -1,5 +1,6 @@
 import java.time.LocalDate;
-import java.time.Period;
+// import java.time.Period;
+import java.time.temporal.ChronoUnit;
 
 public class Ex4Solutions {
 public static void main(String[] args){
@@ -18,7 +19,7 @@ public static void main(String[] args){
 /**
  * @return : it returns the number of days left until next birthday
  * */
-  public static int getDaysUntilNextBirthday(LocalDate birthdate){
+  public static long getDaysUntilNextBirthday(LocalDate birthdate){
   // Step1: get the current date
     LocalDate currentDate = LocalDate.now();
 
@@ -31,7 +32,8 @@ public static void main(String[] args){
       nextBirthDay = nextBirthDay.plusYears(1);
     }
      // returns the number of days between current day and next birthday
-    return Period.between(currentDate, nextBirthDay).getDays();
+
+    return ChronoUnit.DAYS.between(currentDate, nextBirthDay);
 
   }
 
